@@ -1,0 +1,9 @@
+node_modules
+dist
+*.css
+*.json
+*.md
+eslint.config.mjs
+vite.config.ts
+vite.widget.config.ts
+public
