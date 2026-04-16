@@ -1,0 +1,40 @@
+@import './variables.css';
+
+/*
+ * Изолированный reset для виджета.
+ * Все правила привязаны к .rc-widget — не влияют на стили страницы CMS.
+ */
+
+.rc-widget *,
+.rc-widget *::before,
+.rc-widget *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.rc-widget {
+    font-family: var(--font-family);
+    font-size: 14px;
+    color: var(--color-text);
+    line-height: 1.5;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 16px;
+}
+
+.rc-widget > h1 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 24px;
+}
+
+.rc-widget button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.rc-widget input {
+    font-family: inherit;
+}
