@@ -1,0 +1,69 @@
+- generic [ref=e3]:
+      - heading "Калькулятор кровли и заборов" [level=1] [ref=e4]
+      - tablist "Раздел калькулятора" [ref=e5]:
+            - tab "Кровля" [selected] [ref=e6] [cursor=pointer]
+            - tab "Заборы" [ref=e7] [cursor=pointer]
+      - generic [ref=e8]:
+            - generic [ref=e9]:
+                  - generic [ref=e10]: Выбор типа кровли
+                  - radiogroup "Тип кровли" [ref=e11]:
+                        - radio "Односкатная Односкатная" [checked] [ref=e12] [cursor=pointer]:
+                              - img "Односкатная" [ref=e14]
+                              - generic [ref=e15]: Односкатная
+                        - radio "Двускатная Двускатная" [ref=e16] [cursor=pointer]:
+                              - img "Двускатная" [ref=e18]
+                              - generic [ref=e19]: Двускатная
+                        - radio "Мансардная Мансардная" [ref=e20] [cursor=pointer]:
+                              - img "Мансардная" [ref=e22]
+                              - generic [ref=e23]: Мансардная
+                        - radio "Вальмовая Вальмовая" [ref=e24] [cursor=pointer]:
+                              - img "Вальмовая" [ref=e26]
+                              - generic [ref=e27]: Вальмовая
+                        - radio "Шатровая Шатровая" [ref=e28] [cursor=pointer]:
+                              - img "Шатровая" [ref=e30]
+                              - generic [ref=e31]: Шатровая
+            - generic [ref=e32]:
+                  - generic [ref=e33]:
+                        - generic [ref=e34]:
+                              - generic [ref=e35]: Материал кровли
+                              - radiogroup "Материал" [ref=e36]:
+                                    - radio "Профилированный лист Профилированный лист" [ref=e37] [cursor=pointer]:
+                                          - img "Профилированный лист" [ref=e39]
+                                          - generic [ref=e40]: Профилированный лист
+                                    - radio "Металлочерепица Металлочерепица" [checked] [ref=e41] [cursor=pointer]:
+                                          - img "Металлочерепица" [ref=e43]
+                                          - generic [ref=e44]: Металлочерепица
+                                    - radio "Фальцевая панель Фальцевая панель" [ref=e45] [cursor=pointer]:
+                                          - img "Фальцевая панель" [ref=e47]
+                                          - generic [ref=e48]: Фальцевая панель
+                        - generic [ref=e49]:
+                              - generic [ref=e50]: Размеры кровли
+                              - generic [ref=e51]:
+                                    - generic [ref=e52]:
+                                          - generic [ref=e53]: Ширина ската
+                                          - generic [ref=e54]:
+                                                - generic [ref=e55]: L
+                                                - spinbutton "Ширина ската" [ref=e56]: '10'
+                                                - generic [ref=e57]: м
+                                    - generic [ref=e58]:
+                                          - generic [ref=e59]: Длина ската (левый / передний)
+                                          - generic [ref=e60]:
+                                                - generic [ref=e61]: a
+                                                - spinbutton "Длина ската (левый / передний)" [ref=e62]: '4'
+                                                - generic [ref=e63]: м
+                  - img [ref=e65]:
+                        - generic [ref=e72]: L
+                        - generic [ref=e74]: a
+                        - generic [ref=e76]: L
+                        - generic [ref=e78]: a
+            - button "Сделать расчёт" [active] [ref=e80] [cursor=pointer]
+            - generic [ref=e82]:
+                  - generic [ref=e83]: Результаты расчёта
+                  - table [ref=e88]:
+                        - rowgroup [ref=e89]:
+                              - row "Количество листов 10 шт." [ref=e90]:
+                                    - cell "Количество листов" [ref=e91]
+                                    - cell "10 шт." [ref=e92]
+                              - row "Площадь к оплате 47.60 м²" [ref=e93]:
+                                    - cell "Площадь к оплате" [ref=e94]
+                                    - cell "47.60 м²" [ref=e95]

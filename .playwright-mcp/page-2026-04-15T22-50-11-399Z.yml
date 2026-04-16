@@ -1,0 +1,220 @@
+- generic [ref=e3]:
+      - heading "Калькулятор кровли" [level=1] [ref=e4]
+      - generic [ref=e5]:
+            - generic [ref=e6]:
+                  - generic [ref=e7]: Выбор типа кровли
+                  - radiogroup "Тип кровли" [ref=e8]:
+                        - radio "Односкатная Односкатная" [checked] [ref=e9] [cursor=pointer]:
+                              - img "Односкатная" [ref=e11]
+                              - generic [ref=e12]: Односкатная
+                        - radio "Двускатная Двускатная" [ref=e13] [cursor=pointer]:
+                              - img "Двускатная" [ref=e15]
+                              - generic [ref=e16]: Двускатная
+                        - radio "Мансардная Мансардная" [ref=e17] [cursor=pointer]:
+                              - img "Мансардная" [ref=e19]
+                              - generic [ref=e20]: Мансардная
+                        - radio "Вальмовая Вальмовая" [ref=e21] [cursor=pointer]:
+                              - img "Вальмовая" [ref=e23]
+                              - generic [ref=e24]: Вальмовая
+                        - radio "Шатровая Шатровая" [ref=e25] [cursor=pointer]:
+                              - img "Шатровая" [ref=e27]
+                              - generic [ref=e28]: Шатровая
+            - generic [ref=e29]:
+                  - generic [ref=e30]:
+                        - generic [ref=e31]:
+                              - generic [ref=e32]: Материал кровли
+                              - radiogroup "Материал" [ref=e33]:
+                                    - radio "Профилированный лист Профилированный лист" [ref=e34] [cursor=pointer]:
+                                          - img "Профилированный лист" [ref=e36]
+                                          - generic [ref=e37]: Профилированный лист
+                                    - radio "Металлочерепица Металлочерепица" [checked] [ref=e38] [cursor=pointer]:
+                                          - img "Металлочерепица" [ref=e40]
+                                          - generic [ref=e41]: Металлочерепица
+                                    - radio "Фальцевая панель Фальцевая панель" [ref=e42] [cursor=pointer]:
+                                          - img "Фальцевая панель" [ref=e44]
+                                          - generic [ref=e45]: Фальцевая панель
+                        - generic [ref=e46]:
+                              - generic [ref=e47]: Размеры кровли
+                              - generic [ref=e48]:
+                                    - generic [ref=e49]:
+                                          - generic [ref=e50]: Ширина ската
+                                          - generic [ref=e51]:
+                                                - generic [ref=e52]: L
+                                                - spinbutton "Ширина ската" [ref=e53]
+                                                - generic [ref=e54]: м
+                                    - generic [ref=e55]:
+                                          - generic [ref=e56]: Длина ската (левый / передний)
+                                          - generic [ref=e57]:
+                                                - generic [ref=e58]: a
+                                                - spinbutton "Длина ската (левый / передний)" [ref=e59]
+                                                - generic [ref=e60]: м
+                  - img [ref=e63]:
+                        - generic [ref=e140]:
+                              - generic [ref=e143]: L
+                              - generic [ref=e146]: a
+            - generic [ref=e147]:
+                  - generic [ref=e148]: Выбор типа поверхности
+                  - radiogroup "Тип поверхности" [ref=e149]:
+                        - radio "Матовая" [ref=e150] [cursor=pointer]:
+                              - generic [ref=e151]: Матовая
+                        - radio "Глянцевая" [ref=e152] [cursor=pointer]:
+                              - generic [ref=e153]: Глянцевая
+                        - radio "Имитация натуральных материалов" [ref=e154] [cursor=pointer]:
+                              - generic [ref=e155]: Имитация натуральных материалов
+                        - radio "Имитация натуральных материалов, Матовая" [ref=e156] [cursor=pointer]:
+                              - generic [ref=e157]: Имитация натуральных материалов, Матовая
+            - generic [ref=e158]:
+                  - generic [ref=e160]: Выбор цвета
+                  - radiogroup "Цвет" [ref=e161]:
+                        - radio "7024 Серый графит" [ref=e162] [cursor=pointer]
+                        - radio "RR23 Темно-серый" [ref=e164] [cursor=pointer]
+                        - radio "7004 Серый" [ref=e166] [cursor=pointer]
+                        - radio "7005 Мышиный" [ref=e168] [cursor=pointer]
+                        - radio "8017 Коричневый шоколад" [ref=e170] [cursor=pointer]
+                        - radio "RR32 Темно-коричневый" [ref=e172] [cursor=pointer]
+                        - radio "8004 Коричневая медь" [ref=e174] [cursor=pointer]
+                        - radio "8019 Серо-коричневый" [ref=e176] [cursor=pointer]
+                        - radio "3005 Красное вино" [ref=e178] [cursor=pointer]
+                        - radio "3011 Коричнево-красный" [ref=e180] [cursor=pointer]
+                        - radio "3020 Красный насыщенный" [ref=e182] [cursor=pointer]
+                        - radio "RR29 Вишнёвый" [ref=e184] [cursor=pointer]
+                        - radio "5005 Синий насыщенный" [ref=e186] [cursor=pointer]
+                        - radio "5002 Ультрамарин" [ref=e188] [cursor=pointer]
+                        - radio "5015 Синее небо" [ref=e190] [cursor=pointer]
+                        - radio "5021 Синяя вода" [ref=e192] [cursor=pointer]
+                        - radio "6005 Зелёный мох" [ref=e194] [cursor=pointer]
+                        - radio "6007 Бутылочно-зелёный" [ref=e196] [cursor=pointer]
+                        - radio "6002 Зелёный лист" [ref=e198] [cursor=pointer]
+                        - radio "6018 Жёлто-зелёный" [ref=e200] [cursor=pointer]
+                        - radio "6019 Зелёная пастель" [ref=e202] [cursor=pointer]
+                        - radio "RR11 Элегантный зелёный" [ref=e204] [cursor=pointer]
+                        - radio "9005 Чёрный тёмный" [ref=e206] [cursor=pointer]
+                        - radio "9010 Чистый белый" [ref=e208] [cursor=pointer]
+                        - radio "9002 Серо-белый" [ref=e210] [cursor=pointer]
+                        - radio "9003 Белый" [ref=e212] [cursor=pointer]
+                        - radio "9006 Белый алюминий" [ref=e214] [cursor=pointer]
+                        - radio "1014 Слоновая кость" [ref=e216] [cursor=pointer]
+                        - radio "1015 Светлая слоновая кость" [ref=e218] [cursor=pointer]
+                        - radio "1018 Жёлтый цинк" [ref=e220] [cursor=pointer]
+                        - radio "2004 Чистый оранжевый" [ref=e222] [cursor=pointer]
+                        - radio "DD07 Оранжевый" [ref=e224] [cursor=pointer]
+                        - radio "4009 Пастельно-фиолетовый" [ref=e226] [cursor=pointer]
+            - generic [ref=e228]:
+                  - generic [ref=e229]: Выбор профиля
+                  - radiogroup "Профиль" [ref=e230]:
+                        - radio "ТРАМОНТАНА®-S 25x350 мм" [ref=e231] [cursor=pointer]:
+                              - generic [ref=e232]: ТРАМОНТАНА®-S
+                              - generic [ref=e233]: 25x350 мм
+                        - radio "ТРАМОНТАНА®-M 30x350 мм" [ref=e234] [cursor=pointer]:
+                              - generic [ref=e235]: ТРАМОНТАНА®-M
+                              - generic [ref=e236]: 30x350 мм
+                        - radio "ТРАМОНТАНА®-ML 30x400 мм" [ref=e237] [cursor=pointer]:
+                              - generic [ref=e238]: ТРАМОНТАНА®-ML
+                              - generic [ref=e239]: 30x400 мм
+                        - radio "ТРАМОНТАНА®-SL 25x400 мм" [ref=e240] [cursor=pointer]:
+                              - generic [ref=e241]: ТРАМОНТАНА®-SL
+                              - generic [ref=e242]: 25x400 мм
+                        - radio "ТРАМОНТАНА®-X 35x350 мм" [ref=e243] [cursor=pointer]:
+                              - generic [ref=e244]: ТРАМОНТАНА®-X
+                              - generic [ref=e245]: 35x350 мм
+                        - radio "ТРАМОНТАНА®-XL 35x400 мм" [ref=e246] [cursor=pointer]:
+                              - generic [ref=e247]: ТРАМОНТАНА®-XL
+                              - generic [ref=e248]: 35x400 мм
+                        - radio "МОНТЕРРОСА®-S 25x350 мм" [ref=e249] [cursor=pointer]:
+                              - generic [ref=e250]: МОНТЕРРОСА®-S
+                              - generic [ref=e251]: 25x350 мм
+                        - radio "МОНТЕРРОСА®-M 30x350 мм" [ref=e252] [cursor=pointer]:
+                              - generic [ref=e253]: МОНТЕРРОСА®-M
+                              - generic [ref=e254]: 30x350 мм
+                        - radio "МОНТЕРРОСА®-ML 30x400 мм" [ref=e255] [cursor=pointer]:
+                              - generic [ref=e256]: МОНТЕРРОСА®-ML
+                              - generic [ref=e257]: 30x400 мм
+                        - radio "МОНТЕРРОСА®-SL 25x400 мм" [ref=e258] [cursor=pointer]:
+                              - generic [ref=e259]: МОНТЕРРОСА®-SL
+                              - generic [ref=e260]: 25x400 мм
+                        - radio "МОНТЕРРОСА®-X 35x350 мм" [ref=e261] [cursor=pointer]:
+                              - generic [ref=e262]: МОНТЕРРОСА®-X
+                              - generic [ref=e263]: 35x350 мм
+                        - radio "МОНТЕРРОСА®-XL 35x400 мм" [ref=e264] [cursor=pointer]:
+                              - generic [ref=e265]: МОНТЕРРОСА®-XL
+                              - generic [ref=e266]: 35x400 мм
+                        - radio "МОНТЕКРИСТО®-S 25x350 мм" [ref=e267] [cursor=pointer]:
+                              - generic [ref=e268]: МОНТЕКРИСТО®-S
+                              - generic [ref=e269]: 25x350 мм
+                        - radio "МОНТЕКРИСТО®-M 30x350 мм" [ref=e270] [cursor=pointer]:
+                              - generic [ref=e271]: МОНТЕКРИСТО®-M
+                              - generic [ref=e272]: 30x350 мм
+                        - radio "МОНТЕКРИСТО®-ML 30x400 мм" [ref=e273] [cursor=pointer]:
+                              - generic [ref=e274]: МОНТЕКРИСТО®-ML
+                              - generic [ref=e275]: 30x400 мм
+                        - radio "МОНТЕКРИСТО®-SL 25x400 мм" [ref=e276] [cursor=pointer]:
+                              - generic [ref=e277]: МОНТЕКРИСТО®-SL
+                              - generic [ref=e278]: 25x400 мм
+                        - radio "МОНТЕКРИСТО®-X 35x350 мм" [ref=e279] [cursor=pointer]:
+                              - generic [ref=e280]: МОНТЕКРИСТО®-X
+                              - generic [ref=e281]: 35x350 мм
+                        - radio "МОНТЕКРИСТО®-XL 35x400 мм" [ref=e282] [cursor=pointer]:
+                              - generic [ref=e283]: МОНТЕКРИСТО®-XL
+                              - generic [ref=e284]: 35x400 мм
+                        - radio "ЛАМОНТЕРРА®" [ref=e285] [cursor=pointer]:
+                              - generic [ref=e286]: ЛАМОНТЕРРА®
+                        - radio "ЛАМОНТЕРРА® X" [ref=e287] [cursor=pointer]:
+                              - generic [ref=e288]: ЛАМОНТЕРРА® X
+                        - radio "ЛАМОНТЕРРА® XL" [ref=e289] [cursor=pointer]:
+                              - generic [ref=e290]: ЛАМОНТЕРРА® XL
+                        - radio "МОНКАТТА®" [ref=e291] [cursor=pointer]:
+                              - generic [ref=e292]: МОНКАТТА®
+            - generic [ref=e293]:
+                  - generic [ref=e294]: Выбор покрытия
+                  - radiogroup "Покрытие" [ref=e295]:
+                        - radio "VALORI® гарантия до 30 лет" [ref=e296] [cursor=pointer]:
+                              - generic [ref=e297]: VALORI®
+                              - generic [ref=e298]: гарантия до 30 лет
+                        - radio "Полиэстер гарантия до 5 лет" [ref=e299] [cursor=pointer]:
+                              - generic [ref=e300]: Полиэстер
+                              - generic [ref=e301]: гарантия до 5 лет
+                        - radio "NormanMP® гарантия до 20 лет" [ref=e302] [cursor=pointer]:
+                              - generic [ref=e303]: NormanMP®
+                              - generic [ref=e304]: гарантия до 20 лет
+                        - radio "VikingMP® E гарантия до 40 лет" [ref=e305] [cursor=pointer]:
+                              - generic [ref=e306]: VikingMP® E
+                              - generic [ref=e307]: гарантия до 40 лет
+                        - radio "AGNETA® гарантия до 25 лет" [ref=e308] [cursor=pointer]:
+                              - generic [ref=e309]: AGNETA®
+                              - generic [ref=e310]: гарантия до 25 лет
+                        - radio "VikingMP® гарантия до 10 лет" [ref=e311] [cursor=pointer]:
+                              - generic [ref=e312]: VikingMP®
+                              - generic [ref=e313]: гарантия до 10 лет
+                        - radio "PURETAN® гарантия до 30 лет" [ref=e314] [cursor=pointer]:
+                              - generic [ref=e315]: PURETAN®
+                              - generic [ref=e316]: гарантия до 30 лет
+                        - radio "PURMAN® гарантия до 50 лет" [ref=e317] [cursor=pointer]:
+                              - generic [ref=e318]: PURMAN®
+                              - generic [ref=e319]: гарантия до 50 лет
+                        - radio "CLOUDY® гарантия до 30 лет" [ref=e320] [cursor=pointer]:
+                              - generic [ref=e321]: CLOUDY®
+                              - generic [ref=e322]: гарантия до 30 лет
+                        - radio "VikingMP® L гарантия до 10 лет" [ref=e323] [cursor=pointer]:
+                              - generic [ref=e324]: VikingMP® L
+                              - generic [ref=e325]: гарантия до 10 лет
+                        - radio "PureTech Mat гарантия до 35 лет" [ref=e326] [cursor=pointer]:
+                              - generic [ref=e327]: PureTech Mat
+                              - generic [ref=e328]: гарантия до 35 лет
+                        - radio "Matt MP® гарантия до 20 лет" [ref=e329] [cursor=pointer]:
+                              - generic [ref=e330]: Matt MP®
+                              - generic [ref=e331]: гарантия до 20 лет
+            - generic [ref=e332]:
+                  - generic [ref=e333]: Толщина металла
+                  - combobox [ref=e335] [cursor=pointer]:
+                        - generic [ref=e336]: Выбрать толщину
+                        - img [ref=e337]
+            - generic [ref=e339]:
+                  - button "Сделать расчёт" [disabled] [ref=e340]
+                  - generic [ref=e341]: 'Выберите: тип поверхности, цвет, профиль, покрытие, толщину металла'
+            - generic [ref=e343]:
+                  - generic [ref=e344]: Результаты расчёта
+                  - generic [ref=e345]:
+                        - generic [ref=e346]: 📐
+                        - generic [ref=e347]:
+                              - text: Заполните форму и нажмите
+                              - text: «Сделать расчёт»
