@@ -1,0 +1,2 @@
+- [Project context](project_context.md) — stack, architecture, sections, formulas, reference UI
+- [User role](user_role.md) — user background and preferred collaboration style
