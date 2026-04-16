@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <title>Тест встройки — Калькулятор кровли</title>
+
+        <!-- Имитируем стили CMS/сайта -->
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background: #f0f0f0;
+                color: #111;
+                margin: 0;
+                padding: 0;
+            }
+            .cms-page {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 30px 20px;
+            }
+            .cms-header {
+                background: #2c3e50;
+                color: white;
+                padding: 16px 24px;
+                font-size: 20px;
+                font-weight: bold;
+                margin-bottom: 24px;
+            }
+            .cms-text {
+                color: #555;
+                margin-bottom: 16px;
+                line-height: 1.6;
+            }
+        </style>
+
+        <!-- Стили виджета -->
+        <link
+            rel="stylesheet"
+            href="./widget.css"
+        />
+    </head>
+    <body>
+        <div class="cms-header">Пример страницы сайта (CMS)</div>
+
+        <div class="cms-page">
+            <p class="cms-text">Это обычная страница сайта. Ниже встроен калькулятор кровли.</p>
+
+            <!-- Точка монтирования виджета -->
+            <div id="roof-calc"></div>
+
+            <p
+                class="cms-text"
+                style="margin-top: 24px"
+            >
+                Текст после калькулятора. Стили виджета не должны влиять на этот текст.
+            </p>
+        </div>
+
+        <!-- Виджет -->
+        <script src="./widget.js"></script>
+    </body>
+</html>
