@@ -1,0 +1,14 @@
+[
+    { "id": "valori",      "label": "VALORI®",      "guarantee": "до 30 лет" },
+    { "id": "polyester",   "label": "Полиэстер",    "guarantee": "до 5 лет"  },
+    { "id": "normanmp",    "label": "NormanMP®",    "guarantee": "до 20 лет" },
+    { "id": "vikingmp-e",  "label": "VikingMP® E",  "guarantee": "до 40 лет" },
+    { "id": "agneta",      "label": "AGNETA®",      "guarantee": "до 25 лет" },
+    { "id": "vikingmp",    "label": "VikingMP®",    "guarantee": "до 10 лет" },
+    { "id": "puretan",     "label": "PURETAN®",     "guarantee": "до 30 лет" },
+    { "id": "purman",      "label": "PURMAN®",      "guarantee": "до 50 лет" },
+    { "id": "cloudy",      "label": "CLOUDY®",      "guarantee": "до 30 лет" },
+    { "id": "vikingmp-l",  "label": "VikingMP® L",  "guarantee": "до 10 лет" },
+    { "id": "puretech",    "label": "PureTech Mat", "guarantee": "до 35 лет" },
+    { "id": "mattmp",      "label": "Matt MP®",     "guarantee": "до 20 лет" }
+]

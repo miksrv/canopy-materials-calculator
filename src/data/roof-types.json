@@ -1,0 +1,7 @@
+[
+    { "id": "single",  "label": "Односкатная", "params": ["L", "a"] },
+    { "id": "double",  "label": "Двускатная",  "params": ["L", "a", "b"] },
+    { "id": "mansard", "label": "Мансардная",  "params": ["L", "a", "b", "c", "d"] },
+    { "id": "hip",     "label": "Вальмовая",   "params": ["M", "K", "L", "a", "a2"] },
+    { "id": "pyramid", "label": "Шатровая",    "params": ["M", "L", "a", "a2"] }
+]

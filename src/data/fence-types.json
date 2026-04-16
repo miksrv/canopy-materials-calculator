@@ -1,0 +1,5 @@
+[
+    { "id": "corrugated", "label": "Из профлиста",  "params": ["P", "h", "a"] },
+    { "id": "picket",     "label": "Из штакетника", "params": ["X", "X1", "h", "P"] },
+    { "id": "louvre",     "label": "Жалюзи",        "params": ["K", "Kh", "L"] }
+]
