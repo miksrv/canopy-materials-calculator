@@ -15,7 +15,6 @@ import ResultTable, { type ResultRow } from '../ui/ResultTable/ResultTable'
 import SelectDropdown from '../ui/SelectDropdown/SelectDropdown'
 
 import styles from './RoofCalculator.module.css'
-import coatingsData from '../../data/coatings.json'
 import colorsData from '../../data/colors.json'
 import materialsData from '../../data/materials.json'
 import profilesData from '../../data/profiles.json'
@@ -45,13 +44,9 @@ interface ColorOption {
 interface ProfileOption {
     id: string
     label: string
-    size: string | null
-}
-
-interface CoatingOption {
-    id: string
-    label: string
-    guarantee: string
+    materialId: string
+    X: number
+    X1: number
 }
 
 interface ThicknessOption {
@@ -107,7 +102,6 @@ const materials = materialsData as Material[]
 const surfaceTypes = surfaceTypesData as SurfaceType[]
 const colors = colorsData as ColorOption[]
 const profiles = profilesData as ProfileOption[]
-const coatings = coatingsData as CoatingOption[]
 const thicknessOptions = thicknessData as ThicknessOption[]
 
 function buildDefaultParams(params: string[]): Record<string, number> {
@@ -124,7 +118,6 @@ function buildResultRows(
         surfaceType: string | null
         color: string | null
         profile: string | null
-        coating: string | null
         thickness: string | null
     }
 ): ResultRow[] {
@@ -139,11 +132,10 @@ function buildResultRows(
         rows.push({ param: 'Фронтонные планки', value: `${result.frontPlanks.toFixed(2)} п.м.` })
     }
 
-    // Append selected configuration values
     if (selections.surfaceType) {
         const st = surfaceTypes.find((s) => s.id === selections.surfaceType)
         if (st) {
-            rows.push({ param: 'Тип поверхности', value: st.label })
+            rows.push({ param: 'Покрытие', value: st.label })
         }
     }
     if (selections.color) {
@@ -155,13 +147,7 @@ function buildResultRows(
     if (selections.profile) {
         const p = profiles.find((p) => p.id === selections.profile)
         if (p) {
-            rows.push({ param: 'Профиль', value: p.size ? `${p.label} (${p.size})` : p.label })
-        }
-    }
-    if (selections.coating) {
-        const co = coatings.find((co) => co.id === selections.coating)
-        if (co) {
-            rows.push({ param: 'Покрытие', value: `${co.label} (гарантия ${co.guarantee})` })
+            rows.push({ param: 'Профиль', value: p.label })
         }
     }
     if (selections.thickness) {
@@ -211,26 +197,27 @@ export default function RoofCalculator(): React.JSX.Element {
     const [selectedSurface, setSelectedSurface] = useState<string | null>(null)
     const [selectedColor, setSelectedColor] = useState<string | null>(null)
     const [selectedProfile, setSelectedProfile] = useState<string | null>(null)
-    const [selectedCoating, setSelectedCoating] = useState<string | null>(null)
     const [selectedThickness, setSelectedThickness] = useState<string | null>(null)
 
     const currentRoofType = roofTypes.find((rt) => rt.id === selectedRoofType)!
     const currentMaterial = materials.find((m) => m.id === selectedMaterial)!
 
+    const filteredProfiles = profiles.filter((p) => p.materialId === selectedMaterial)
+
     const hasFormErrors = currentRoofType.params.some((p) => errors[p] != null)
+
+    const profileRequired = selectedMaterial !== 'falc'
 
     const allSelectionsComplete =
         selectedSurface != null &&
         selectedColor != null &&
-        selectedProfile != null &&
-        selectedCoating != null &&
+        (!profileRequired || selectedProfile != null) &&
         selectedThickness != null
 
     const missingSelections = [
-        !selectedSurface && 'тип поверхности',
+        !selectedSurface && 'покрытие',
         !selectedColor && 'цвет',
-        !selectedProfile && 'профиль',
-        !selectedCoating && 'покрытие',
+        profileRequired && !selectedProfile && 'профиль',
         !selectedThickness && 'толщину металла'
     ].filter(Boolean) as string[]
 
@@ -249,6 +236,7 @@ export default function RoofCalculator(): React.JSX.Element {
     const handleMaterialChange = useCallback(
         (id: MaterialId) => {
             setSelectedMaterial(id)
+            setSelectedProfile(null)
             if (result) {
                 setResultStale(true)
             }
@@ -284,7 +272,12 @@ export default function RoofCalculator(): React.JSX.Element {
             return
         }
 
-        const res = calcRoof(selectedRoofType, params, currentMaterial)
+        const selectedProfileObj = profiles.find((p) => p.id === selectedProfile)
+        const materialForCalc: Material =
+            selectedProfileObj != null
+                ? { ...currentMaterial, X: selectedProfileObj.X, X1: selectedProfileObj.X1 }
+                : currentMaterial
+        const res = calcRoof(selectedRoofType, params, materialForCalc)
         setResult(res)
         setResultStale(false)
     }
@@ -294,7 +287,6 @@ export default function RoofCalculator(): React.JSX.Element {
               surfaceType: selectedSurface,
               color: selectedColor,
               profile: selectedProfile,
-              coating: selectedCoating,
               thickness: selectedThickness
           })
         : []
@@ -397,11 +389,11 @@ export default function RoofCalculator(): React.JSX.Element {
 
             {/* ── Surface type ── */}
             <div className={styles.section}>
-                <div className={styles.sectionTitle}>Выбор типа поверхности</div>
+                <div className={styles.sectionTitle}>Выбор покрытия</div>
                 <div
                     className={styles.chipGrid}
                     role='radiogroup'
-                    aria-label='Тип поверхности'
+                    aria-label='Покрытие'
                 >
                     {surfaceTypes.map((st) => (
                         <OptionChip
@@ -446,44 +438,25 @@ export default function RoofCalculator(): React.JSX.Element {
             </div>
 
             {/* ── Profile ── */}
-            <div className={styles.section}>
-                <div className={styles.sectionTitle}>Выбор профиля</div>
-                <div
-                    className={styles.tileGrid}
-                    role='radiogroup'
-                    aria-label='Профиль'
-                >
-                    {profiles.map((p) => (
-                        <OptionChip
-                            key={p.id}
-                            label={p.label}
-                            subtitle={p.size}
-                            selected={selectedProfile === p.id}
-                            onClick={() => handleSelectionChange(setSelectedProfile, p.id)}
-                        />
-                    ))}
+            {selectedMaterial !== 'falc' && (
+                <div className={styles.section}>
+                    <div className={styles.sectionTitle}>Выбор профиля</div>
+                    <div
+                        className={styles.tileGrid}
+                        role='radiogroup'
+                        aria-label='Профиль'
+                    >
+                        {filteredProfiles.map((p) => (
+                            <OptionChip
+                                key={p.id}
+                                label={p.label}
+                                selected={selectedProfile === p.id}
+                                onClick={() => handleSelectionChange(setSelectedProfile, p.id)}
+                            />
+                        ))}
+                    </div>
                 </div>
-            </div>
-
-            {/* ── Coating ── */}
-            <div className={styles.section}>
-                <div className={styles.sectionTitle}>Выбор покрытия</div>
-                <div
-                    className={styles.tileGrid}
-                    role='radiogroup'
-                    aria-label='Покрытие'
-                >
-                    {coatings.map((co) => (
-                        <OptionChip
-                            key={co.id}
-                            label={co.label}
-                            subtitle={`гарантия ${co.guarantee}`}
-                            selected={selectedCoating === co.id}
-                            onClick={() => handleSelectionChange(setSelectedCoating, co.id)}
-                        />
-                    ))}
-                </div>
-            </div>
+            )}
 
             {/* ── Thickness ── */}
             <div className={styles.section}>

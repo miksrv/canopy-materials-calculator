@@ -11,6 +11,16 @@ export interface Material {
     X1: number
 }
 
+export interface Profile {
+    id: string
+    label: string
+    materialId: MaterialId
+    /** Габаритная ширина, мм */
+    X: number
+    /** Монтажная ширина, мм */
+    X1: number
+}
+
 export interface RoofSingleSlopeParams {
     L: number
     a: number
