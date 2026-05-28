@@ -7,10 +7,9 @@ import { type Material, type RoofResult, type RoofTypeId } from './types'
  * a — длина листа со свесом (м)
  */
 function calcSingleSlope(L: number, a: number, material: Material): RoofResult {
-    const X = material.X / 1000
     const X1 = material.X1 / 1000
     const N = Math.ceil(L / X1)
-    const area = X * a * N
+    const area = X1 * a * N
     return { sheets: N, area: parseFloat(area.toFixed(2)) }
 }
 
@@ -22,10 +21,9 @@ function calcSingleSlope(L: number, a: number, material: Material): RoofResult {
  * b — длина правого ската (м)
  */
 function calcDoubleSlope(L: number, a: number, b: number, material: Material): RoofResult {
-    const X = material.X / 1000
     const X1 = material.X1 / 1000
     const N = Math.ceil(L / X1)
-    const area = X * a * N + X * b * N
+    const area = X1 * a * N + X1 * b * N
     return { sheets: N * 2, area: parseFloat(area.toFixed(2)) }
 }
 
@@ -37,10 +35,9 @@ function calcDoubleSlope(L: number, a: number, b: number, material: Material): R
  * c, d — нижние скаты
  */
 function calcMansard(L: number, a: number, b: number, c: number, d: number, material: Material): RoofResult {
-    const X = material.X / 1000
     const X1 = material.X1 / 1000
     const N = Math.ceil(L / X1)
-    const area = (X * a + X * b + X * c + X * d) * N
+    const area = X1 * (a + b + c + d) * N
     return { sheets: N * 4, area: parseFloat(area.toFixed(2)) }
 }
 
@@ -54,11 +51,11 @@ function calcMansard(L: number, a: number, b: number, c: number, d: number, mate
  * a2 — длина ската торцевой стороны (м)
  */
 function calcHipRoof(M: number, K: number, L: number, a: number, a2: number, material: Material): RoofResult {
-    const X = material.X / 1000
+    const X1 = material.X1 / 1000
     const area = (2 * ((M * a2) / 2) + ((K + L) / 2) * a * 2) * 1.15
     const ridge = K + 4 * Math.sqrt(a2 * a2 + (M / 2) * (M / 2))
     const frontPlanks = (a + a2) * 4
-    const sheets = Math.ceil(area / (X * a))
+    const sheets = Math.ceil(area / (X1 * a))
     return {
         sheets,
         area: parseFloat(area.toFixed(2)),
@@ -76,10 +73,10 @@ function calcHipRoof(M: number, K: number, L: number, a: number, a2: number, mat
  * a2 — длина короткого ската (м)
  */
 function calcPyramidRoof(M: number, L: number, a: number, a2: number, material: Material): RoofResult {
-    const X = material.X / 1000
+    const X1 = material.X1 / 1000
     const area = (2 * ((a2 * M) / 2) + 2 * ((a * L) / 2)) * 1.15
     const ridge = Math.sqrt(a2 * a2 + (M / 2) * (M / 2)) * 4
-    const sheets = Math.ceil(area / (X * a))
+    const sheets = Math.ceil(area / (X1 * a))
     return {
         sheets,
         area: parseFloat(area.toFixed(2)),
