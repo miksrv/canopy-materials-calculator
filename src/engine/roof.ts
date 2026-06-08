@@ -7,9 +7,12 @@ import { type Material, type RoofResult, type RoofTypeId } from './types'
  * a — длина листа со свесом (м)
  */
 function calcSingleSlope(L: number, a: number, material: Material): RoofResult {
+    const X = material.X / 1000
     const X1 = material.X1 / 1000
+    // Кол-во листов в ряду — по полезной (монтажной) ширине X1 (листы кладутся внахлёст)
     const N = Math.ceil(L / X1)
-    const area = X1 * a * N
+    // Площадь к оплате — по габаритной ширине X (нахлёсты тоже оплачиваются)
+    const area = X * a * N
     return { sheets: N, area: parseFloat(area.toFixed(2)) }
 }
 
@@ -21,9 +24,10 @@ function calcSingleSlope(L: number, a: number, material: Material): RoofResult {
  * b — длина правого ската (м)
  */
 function calcDoubleSlope(L: number, a: number, b: number, material: Material): RoofResult {
+    const X = material.X / 1000
     const X1 = material.X1 / 1000
     const N = Math.ceil(L / X1)
-    const area = X1 * a * N + X1 * b * N
+    const area = X * a * N + X * b * N
     return { sheets: N * 2, area: parseFloat(area.toFixed(2)) }
 }
 
@@ -35,9 +39,10 @@ function calcDoubleSlope(L: number, a: number, b: number, material: Material): R
  * c, d — нижние скаты
  */
 function calcMansard(L: number, a: number, b: number, c: number, d: number, material: Material): RoofResult {
+    const X = material.X / 1000
     const X1 = material.X1 / 1000
     const N = Math.ceil(L / X1)
-    const area = X1 * (a + b + c + d) * N
+    const area = X * (a + b + c + d) * N
     return { sheets: N * 4, area: parseFloat(area.toFixed(2)) }
 }
 
