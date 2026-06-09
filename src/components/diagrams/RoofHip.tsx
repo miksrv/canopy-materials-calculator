@@ -339,14 +339,14 @@ export default function RoofHip({ activeParam, className = 'rc-diagram' }: Props
                     <g id='size_X'>
                         <path
                             id='Line 63_1'
-                            stroke={activeParam === 'a2' ? '#F57C00' : '#306FC4'}
+                            stroke={activeParam === 'a' ? '#F57C00' : '#306FC4'}
                             d='M127.16 106L176.16 162'
                             strokeLinecap='round'
                             strokeWidth='2'
                         ></path>
                         <path
                             id='Line 63_2'
-                            stroke={activeParam === 'a' ? '#F57C00' : '#306FC4'}
+                            stroke={activeParam === 'a2' ? '#F57C00' : '#306FC4'}
                             d='M127.16 106L79.7424 154.9996'
                             strokeLinecap='round'
                             strokeWidth='2'
@@ -422,14 +422,14 @@ export default function RoofHip({ activeParam, className = 'rc-diagram' }: Props
                         ></path>
                         <circle
                             id='Ellipse 25_2'
-                            fill={activeParam === 'a2' ? '#F57C00' : '#306FC4'}
+                            fill={activeParam === 'a' ? '#F57C00' : '#306FC4'}
                             cx='152'
                             cy='136'
                             r='10'
                         ></circle>
                         <circle
                             id='Ellipse 25_2_2'
-                            fill={activeParam === 'a' ? '#F57C00' : '#306FC4'}
+                            fill={activeParam === 'a2' ? '#F57C00' : '#306FC4'}
                             cx='102'
                             cy='132'
                             r='10'
