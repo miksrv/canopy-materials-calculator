@@ -341,56 +341,56 @@ export default function RoofMansard({ activeParam, className = 'rc-diagram' }: P
                     <g id='size_X'>
                         <path
                             id='Line 71_2'
-                            stroke={activeParam === 'd' ? '#F57C00' : '#306FC4'}
+                            stroke={activeParam === 'a' ? '#F57C00' : '#306FC4'}
                             d='M32.983 137.991 57 96'
                             strokeLinecap='round'
                             strokeWidth='2'
                         ></path>
                         <path
                             id='Line 72_2'
-                            stroke={activeParam === 'c' ? '#F57C00' : '#306FC4'}
+                            stroke={activeParam === 'b' ? '#F57C00' : '#306FC4'}
                             d='m57 96 37-1'
                             strokeLinecap='round'
                             strokeWidth='2'
                         ></path>
                         <path
                             id='Line 73'
-                            stroke={activeParam === 'b' ? '#F57C00' : '#306FC4'}
+                            stroke={activeParam === 'c' ? '#F57C00' : '#306FC4'}
                             d='m94 95 29 32'
                             strokeLinecap='round'
                             strokeWidth='2'
                         ></path>
                         <path
                             id='Line 74'
-                            stroke={activeParam === 'a' ? '#F57C00' : '#306FC4'}
+                            stroke={activeParam === 'd' ? '#F57C00' : '#306FC4'}
                             d='m123 127 21 50'
                             strokeLinecap='round'
                             strokeWidth='2'
                         ></path>
                         <circle
                             id='Ellipse 32_2'
-                            fill={activeParam === 'd' ? '#F57C00' : '#306FC4'}
+                            fill={activeParam === 'a' ? '#F57C00' : '#306FC4'}
                             cx='42'
                             cy='117'
                             r='10'
                         ></circle>
                         <circle
                             id='Ellipse 33'
-                            fill={activeParam === 'c' ? '#F57C00' : '#306FC4'}
+                            fill={activeParam === 'b' ? '#F57C00' : '#306FC4'}
                             cx='73'
                             cy='94'
                             r='10'
                         ></circle>
                         <circle
                             id='Ellipse 34'
-                            fill={activeParam === 'b' ? '#F57C00' : '#306FC4'}
+                            fill={activeParam === 'c' ? '#F57C00' : '#306FC4'}
                             cx='111'
                             cy='112'
                             r='10'
                         ></circle>
                         <circle
                             id='Ellipse 35'
-                            fill={activeParam === 'a' ? '#F57C00' : '#306FC4'}
+                            fill={activeParam === 'd' ? '#F57C00' : '#306FC4'}
                             cx='135'
                             cy='151'
                             r='10'
