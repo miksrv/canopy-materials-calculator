@@ -339,14 +339,14 @@ export default function RoofPyramid({ activeParam, className = 'rc-diagram' }: P
                     <g id='size_X'>
                         <path
                             id='Line 66_2'
-                            stroke={activeParam === 'a' ? '#F57C00' : '#306FC4'}
+                            stroke={activeParam === 'L' ? '#F57C00' : '#306FC4'}
                             d='m134 185 141-75'
                             strokeLinecap='round'
                             strokeWidth='2'
                         ></path>
                         <path
                             id='Line 68_2'
-                            stroke={activeParam === 'L' ? '#F57C00' : '#306FC4'}
+                            stroke={activeParam === 'a' ? '#F57C00' : '#306FC4'}
                             d='M148 96L204 146'
                             strokeLinecap='round'
                             strokeWidth='2'
