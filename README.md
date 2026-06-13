@@ -22,7 +22,7 @@ An embeddable React/TypeScript widget for calculating roofing materials. Integra
 
 | Layer | Technology |
 |---|---|
-| Framework | React 19 + TypeScript 5 |
+| Framework | React 19 & TypeScript 5 |
 | Build | Vite 8 (lib mode, IIFE) |
 | Styles | CSS Modules + CSS Variables |
 | Diagrams | Inline SVG (React components) |
